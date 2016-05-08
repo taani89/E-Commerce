@@ -1,0 +1,232 @@
+<?php
+//initialize the session
+if (!isset($_SESSION)) {
+  session_start();
+}
+
+// ** Logout the current user. **
+$logoutAction = $_SERVER['PHP_SELF']."?doLogout=true";
+if ((isset($_SERVER['QUERY_STRING'])) && ($_SERVER['QUERY_STRING'] != "")){
+  $logoutAction .="&". htmlentities($_SERVER['QUERY_STRING']);
+}
+
+if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
+  //to fully log out a visitor we need to clear the session varialbles
+  $_SESSION['MM_Username'] = NULL;
+  $_SESSION['MM_UserGroup'] = NULL;
+  $_SESSION['PrevUrl'] = NULL;
+  unset($_SESSION['MM_Username']);
+  unset($_SESSION['MM_UserGroup']);
+  unset($_SESSION['PrevUrl']);
+	
+  $logoutGoTo = "home.html";
+  if ($logoutGoTo) {
+    header("Location: $logoutGoTo");
+    exit;
+  }
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
+<head>
+	<title>SHOPPER FRIEND</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="shortcut icon" href="css/images/favicon.ico" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+	<style type="text/css">
+	body {
+	background-image: url(css/images/background-kuning.jpg);
+}
+    body,td,th {
+	color: #033;
+}
+    </style>
+	<!--[if IE 6]>
+		<link rel="stylesheet" href="css/ie6.css" type="text/css" media="media" />
+		<script src="js/png-fix.js" type="text/javascript" charset="utf-8"></script>
+	<![endif]-->
+	<script src="js/jquery-1.6.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.jcarousel.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-func.js" type="text/javascript" charset="utf-8"></script>	
+</head>
+<body>
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<div id="top">
+			<!-- Shell -->
+			<div class="shell">
+				<div class="top-nav">
+					<ul>
+					    <li class="first nobg"><a href="home.html" target="_self">Welcome
+				        !</a></li>
+					    <li><a href="login.php" target="_self" title="Login">Login</a></li>
+					    <li><a href="account.php" target="_self" title="My Account">My Account</a></li>
+					    <li class="nobg"><a href="view_cart.html" target="_self" class="bag" title="My Bag">My Bag</a></li>
+					</ul>
+				</div>
+				
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- End Shell -->
+		</div>
+		<!-- End Top -->
+		<!-- Main -->
+		<div id="main">
+			<!-- Shell -->
+		  <div class="shell">
+				<!-- Header -->
+			<div id="header">
+					<h1 id="logo"><a href="home.html" class="notext" title="Shopper Friend">Shopper Friend</a></h1>
+					<div id="navigation">
+						<ul>
+						    <li><a href="laptops.html" class="active" title="Laptops"><span>Laptops</span></a></li>
+						    <li><a href="smartphones.html" title="Smartphones"><span>Smartphones</span></a></li>
+						</ul>
+					</div>
+					<div class="cl">&nbsp;
+					  <h1>Welcome to Shopper Friend&rsquo;s website. </h1>
+                      <p>&nbsp;</p>
+                      </p>
+                </div>
+			  </div>
+			  <!-- End Header -->
+			  <!-- Slider -->
+				
+					  <!-- End Products Slider -->
+			      <h1>Welcome to Shopper Friend&rsquo;s website. </h1>
+                        <p>&nbsp;</p>
+                        <p>&nbsp;</p>
+                        <p><br />
+                        </p>
+                        <p>Shopper friend is a company that doing online-business  and parcel delivery.Shopper Friend located  in Petaling Jaya, Selangor. <br/>
+                          Generally, we&rsquo;re selling products that are mostly  about brand new quality of Laptops and Smartphones.Customers don&rsquo;t <br/>
+                          have to  waste fuel for a ride to our company but they have to open our website, review  our products and order if they are <br/>
+                          willing to buy our product. We will doing  delivery to customer&rsquo;s home for those who are living in our area and apart from<br/>
+                          that will be posted to their address. Delivery or post will be done once  payment is accomplished. Don&rsquo;t miss out and <br/>
+                          grab the opportunity to buy our  products.What are you waiting for? Come, <a href="/Ecom/login.php" target="_self">register</a> and be one of us..</p>
+                        <p>&nbsp;</p>
+            <div class="contact">
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <h1>Contact Us</h1>
+              <p>&nbsp;</p>
+              <table width="470" cellpadding="0" cellspacing="0">
+                <tbody>
+                  <tr>
+                    <td width="1"></td>
+                    <td width="103"><strong>Address</strong></td>
+                    <td width="293">Shopper Friend Store<br />
+                      Level 01, No 1, First Avenue Bandar Utama<br />
+                      Petaling Jaya, Selangor <br />
+                      47800<br />
+                    Malaysia</td>
+                  </tr>
+                  <tr>
+                    <td><br /></td>
+                    <td><strong>Sales Enquiry</strong></td>
+                    <td>+60 3729490384</td>
+                  </tr>
+                  <tr>
+                    <td><br /></td>
+                    <td><strong>Service Line</strong></td>
+                    <td>+60 3729490384</td>
+                  </tr>
+                  <tr>
+                    <td><br /></td>
+                    <td><strong>Fax No</strong></td>
+                    <td>(605) 243 8913</td>
+                  </tr>
+                  <tr>
+                    <td><br /></td>
+                    <td><strong>Email</strong></td>
+                    <td>Taani-facilitator-1@hotmail.my</td>
+                  </tr>
+                  <tr>
+                    <td><br /></td>
+                    <td>Business URL<br /></td>
+                    <td>http://localhost/Ecom<br /></td>
+                  </tr>
+                  <tr>
+                    <td><br /></td>
+                    <td><strong>Operating Hours</strong></td>
+                    <td><p>Mondays ~ Fridays 10.30am till 8.00pm</p>
+                      <p>Saturdays ~ Sundays 10:30am till 9:00pm</p></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+            </div>
+            <p>&nbsp;</p>
+                        </p>
+            </div>
+					<!-- End Case -->
+	  </div>
+				<!-- End Content -->
+</div>
+			<!-- End Shell -->
+		</div>
+		<!-- End Main -->
+		<div id="footer-push" class="cl">&nbsp;</div>
+	</div>
+	<!-- End Wrapper -->
+	<!-- Footer -->
+	<div id="footer">
+		<!-- Shell -->
+		<div class="shell">
+			<!-- Cols -->
+			<div class="cols">
+				<ul>
+				    <li class="col">
+				    	<h4>About Shopper Friend</h4>
+				    	<p>Shopper friend is a company that doing online-business and parcel delivery.Shopper Friend located in Tanjung Malim, Perak. 
+Generally, we’re selling products that are mostly about brand new quality of Laptops and Smartphones.Customers don’t 
+have to waste fuel for a ride to our company but they have to open our website, review our products and order if they are 
+willing to buy our product.</p>
+				    	<a href="#" class="more-link" title="Read More"  onclick="MM_openBrWindow('aboutus.html','About us','scrollbars=yes,width=480,height=640')">Read More >></a>
+				    </li>
+				    <li class="col social">
+				    	<h4>get social</h4>
+				    	<ul>
+				    	    <li><a href="https://www.facebook.com/" target="new" class="fb-link" title="Facebook">facebook</a></li>
+				    	    <li><a href="https://twitter.com/" target="new" class="twitter-link" title="Twitter">twitter</a></li>				    	   					 <li><a href="https://www.blogger.com/" target="new" class="blogger-link" title="Blogger">blogger</a></li>
+				    	</ul>
+				    </li>
+				    <li class="col partners">
+				    	<h4>partners</h4>
+				    	<ul>
+				    	   <li><a href="http://www.upsi.edu.my/" target="new" title="upsi">Universiti Pendidikan Sultan Idris</a></li>
+				    	    <li><a href="http://www.ipmart.com.my/main/index.php" target="new" title="ipmart">ipmart.com.my</a></li>
+				    	    <li><a href="http://www.lazada.com.my/shop-computers-laptops/" target="new" title="lazada">Lazada.com.my</a></li>
+				    	    <li><a href="http://www.redcom.com.my/" target="new" title="redcom">Redcom Computer</a></li>
+				    	</ul>
+				    </li>
+				    <li class="col contact">
+				    	<h4>newsletter</h4>
+				    	<p>Feel Free to Subscribe to our newsletter</p>
+				    	<form action="newsprocess.php" method="post" target="_blank">
+				    		<div class="field-wrapper">
+				    			<input type="text" class="field" name="name" value="Name" title="Name" />
+				    		</div>
+				    		<div class="field-wrapper">
+				    			<input type="text" class="field" name="email" value="Email" title="Email" />
+				    		</div>
+				    		<input type="submit" value="Submit" name="submit" class="submit-btn" title="Submit" />
+				    		<div class="cl">&nbsp;</div>
+				    	</form>
+				    </li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- End Cols -->
+			<p class="copy">&copy; http://localhost/Ecom/home.html Design by TLS Group</p>
+			<a href="home.html" title="Shopper Friend" target="_self" class="logo"><img src="css/images/footer-logo.png" alt="Shopper Friend" /></a>
+			<div class="cl">&nbsp;</div>
+		</div>
+		<!-- End Shell -->
+	</div>
+	<!-- End Footer -->
+</body>
+</html>
